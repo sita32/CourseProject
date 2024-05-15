@@ -1,0 +1,142 @@
+.trips__list {
+  @include flex;
+  flex-wrap: wrap;
+  column-gap: clamp(20px, 5vw, 141px);
+  row-gap: 32px;
+}
+
+.trips__item {
+  max-width: calc((100% - 5vw * 2) / 3);
+}
+
+.trips__link {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+  transform: translateY(30px);
+  transition: opacity 0.3s, transform .3s;
+  z-index: 1;
+  cursor: pointer;
+
+  &::after {
+    content: 'Узнать больше';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    padding-block: 10px;
+    text-align: center;
+    font-size: 25px;
+    line-height: 35px;
+    font-weight: 600;
+    color: #fff;
+    background-color: rgb(217, 217, 217, 0.2);
+  }
+}
+
+.trips__box {
+  width: 100%;
+  padding: 19px;
+  border-radius: 10px;
+  background-color: #f0eeee;
+
+  & .img-wrap {
+    position: relative;
+    max-width: 454px;
+    max-height: 282px;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    overflow: hidden;
+
+    & img {
+      transition: filter 0.3s;
+    }
+
+    &:hover img,
+    &.active img {
+      filter: brightness(0.5);
+    }
+
+    &:hover .trips__link,
+    &.active .trips__link {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.trips__sub-title {
+  @include flex-center-sb;
+  margin-bottom: 10px;
+
+  & h3 {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 700;
+    color: var(--text-black);
+  }
+}
+
+.trips__stars {
+  @include flex-center-sb;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #ffb800;
+
+  & .img-wrap {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 4px;
+    margin-right: 5px;
+  }
+}
+
+.trips__point {
+  display: inline-flex;
+  align-items: baseline;
+
+  & .img-wrap {
+    display: inline-flex;
+  }
+
+  &_text {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+    color: var(--grey);
+  }
+}
+
+.num-pagination {
+  width: fit-content;
+  margin-top: 80px;
+  margin-inline: auto;
+
+  & ul {
+    @include flex;
+  }
+
+  & li:not(:last-child) {
+    margin-right: 24px;
+  }
+
+  &__link {
+    position: relative;
+    font-size: 25px;
+    line-height: 28px;
+    font-weight: 400;
+    color: var(--text-black);
+    transition: text-decoration 0.2s ease-in-out, color 0.2s ease-in-out;
+
+    &:hover,
+    &.active {
+      color: var(--blue-light);
+      text-decoration: underline;
+    }
+  }
+}

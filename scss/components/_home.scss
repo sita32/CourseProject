@@ -1,0 +1,212 @@
+.hero {
+  position: relative;
+  height: 720px;
+}
+
+.hero__container {
+  height: 100%;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.hero__content {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hero__title {
+  margin-bottom: 20px;
+  color: #fff;
+
+  & span {
+    display: block;
+    font-size: clamp(20px, 6vw, 50px);
+    line-height: clamp(30px, 10vw, 70px);
+    font-weight: 400;
+  }
+
+  & div {
+    font-size: clamp(30px, 10vw, 90px);
+    line-height: clamp(40px, 12vw, 110px);
+    font-weight: 700;
+  }
+}
+
+.hero__more {
+  display: inline-block;
+  padding: 10px 30px;
+  font-size: 25px;
+  line-height: 46px;
+  font-weight: 700;
+  color: var(--text-black);
+  background-color: #fff;
+  transition: background-color 0.2s, color 0.2s;
+
+  &:hover {
+    background-color: var(--blue-lighter);
+    color: #fff;
+  }
+}
+
+.info {
+  padding-top: 98px;
+  padding-bottom: 142px;
+  background-color: #fff;
+}
+
+.info__list {
+  @include flex;
+  gap: 76px;
+}
+
+.info__item {
+  text-align: center;
+}
+
+.info__icon {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  &_fly {
+    background-image: url('../img/fly-info.svg');
+  }
+
+  &_girl {
+    background-image: url('../img/girl.svg');
+  }
+
+  &_calendar {
+    background-image: url('../img/calendar.svg');
+  }
+}
+
+.info__title {
+  margin-bottom: 10px;
+  font-size: 25px;
+  line-height: 30px;
+  font-weight: 700;
+  color: var(--text-black);
+}
+
+.info__decsr {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 400;
+  color: var(--text-black);
+}
+
+.search-tour {
+  padding-block: 85px;
+  background-color: #000;
+  background-image: url('../img/home-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.search-tour__title {
+  position: relative;
+  width: fit-content;
+  margin-inline: auto;
+  margin-bottom: 24px;
+  padding-left: 40px;
+  text-align: center;
+  font-size: 45px;
+  line-height: 79px;
+  font-weight: 700;
+  color: #fff;
+  background-image: url('../img/loup.svg');
+  background-size: 35px 40px;
+  background-position: left 40%;
+  background-repeat: no-repeat;
+}
+
+.search-tour__form {
+  @include flex;
+  align-items: flex-end;
+
+  & label {
+    @include flex;
+    flex-direction: column;
+  }
+}
+
+.search-tour__inputs {
+  @include flex;
+  gap: 64px;
+}
+
+.search-tour__input {
+  width: 100%;
+  max-width: calc((100% - 64px * 3) / 4);
+
+  & span {
+    margin-bottom: 8px;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  & input {
+    width: 100%;
+    height: 62px;
+    padding: 5px 20px;
+    font-size: 24px;
+  }
+}
+
+.search-tour__submit {
+  @include flex-center-center;
+  max-width: 238px;
+  width: 100%;
+  height: 62px;
+  margin-left: 84px;
+  min-height: 62px;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: var(--blue-light);
+  transition: background-color .2s;
+
+  &:hover {
+    background-color: #060966;
+  }
+}
+
+
+.message-container {
+  position: relative;
+  z-index: 1000;
+  left: 20px;
+}
+
+.error-message,
+.success-message {
+  background-color: rgba(255, 0, 0, 0.8); /* Красный цвет для ошибок */
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.success-message {
+  background-color: rgba(0, 128, 0, 0.8); /* Зеленый цвет для успешной отправки */
+}
+
+.error-message.show,
+.success-message.show {
+  opacity: 1; /* Показываем блок при добавлении класса "show" */
+}

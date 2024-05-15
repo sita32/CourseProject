@@ -1,0 +1,164 @@
+/* socials */
+.socials {
+  @include flex;
+}
+
+.socials__item:nth-child(n-1) {
+  margin-right: 10px;
+}
+
+.socials__link {
+  border-radius: 100%;
+  transition: transform 0.2s ease-in-out;
+}
+
+.socials__link:hover {
+  transform: scale(1.1);
+  background-color: var(--blue-lighter);
+}
+
+.socials__link svg path {
+  transition: fill 0.2s ease-in-out;
+}
+
+
+// section-title
+.section {
+  padding-top: 50px;
+  padding-bottom: 70px;
+  background-color: #fff;
+}
+
+.section-title {
+  position: relative;
+  text-align: center;
+  margin-bottom: 38px;
+
+  &__big {
+    font-size: 100px;
+    line-height: 120px;
+    font-weight: 700;
+    color: rgba(112, 112, 112, 0.15);
+  }
+
+  &__mini {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    font-size: 45px;
+    line-height: 59px;
+    font-weight: 600;
+    color: var(--text-black);
+    transform: translateX(-50%);
+  }
+
+  &__middle {
+    position: absolute;
+    top: 21px;
+    left: 50%;
+    font-size: 26px;
+    line-height: 35px;
+    font-weight: 600;
+    color: var(--blue-light);
+    transform: translateX(-50%);
+  }
+}
+
+
+// pagination
+.photo-pagination {
+  position: relative;
+  width: 100%;
+  margin-inline: auto;
+  max-width: 1498px;
+  background-color: var(--grey-light);
+}
+
+.photo-pagination-wrap {
+  @include flex-center-sb;
+  display: none;
+  width: 100%;
+  padding: 51px 99px;
+
+  &.active {
+    @include flex;
+  }
+}
+
+#slide0.active .photo-pagination__box-prev {
+  opacity: 0.5;
+}
+
+.photo-pagination__box {
+  @include flex;
+
+  & .img-wrap {
+    width: 264px;
+    height: 167px;
+  }
+}
+
+.photo-pagination-wrap.opacity .photo-pagination__box-next {
+  opacity: 0.5;
+}
+
+.photo-pagination__box-prev {
+  & .img-wrap {
+    margin-right: 15px;
+  }
+}
+
+.photo-pagination__box-next {
+  @include flex;
+  flex-direction: row-reverse;
+
+  & .img-wrap {
+    margin-left: 15px;
+  }
+}
+
+.photo-pagination__text {
+  padding-top: 24px;
+  text-align: center;
+
+  & span {
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 500;
+    color: var(--text-grey);
+  }
+
+  & h3 {
+    font-size: 25px;
+    line-height: 28px;
+    font-weight: 700;
+    color: var(--text-black);
+  }
+}
+
+
+.photo-pagination__btn {
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+  transform: translateY(-50%);
+
+  & path {
+    transition: fill 0.2s;
+  }
+
+  &:hover path {
+    fill: var(--text-black)
+  }
+}
+
+.photo-pagination__prev {
+  left: 10px;
+}
+
+.photo-pagination__next {
+  right: 10px;
+}

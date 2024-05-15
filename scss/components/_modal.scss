@@ -1,0 +1,74 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 10000;
+}
+
+.modal.active {
+  display: block;
+}
+
+.modal__bg {
+  background-color: rgba($color: #000, $alpha: 0.5);
+}
+
+.modal__box {
+  position: relative;
+  top: 50%;
+  max-width: clamp(567px, 100%, 1000px);
+  max-height: 80%;
+  margin: auto;
+  transform: translateY(-50%);
+  overflow: hidden;
+
+  & img {
+    object-fit: contain;
+    width: 100%;
+  }
+
+  & .swiper-slide {
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  & .swiper-button-next:after,
+  & .swiper-button-prev:after {
+    width: auto;
+    font-size: 60px;
+    padding: 10px;
+    color: #fff;
+    background-color: var(--cobalt);
+    opacity: 1;
+  }
+
+  & .swiper-button-next {
+    right: 32px;
+  }
+
+  & .swiper-button-prev {
+    left: 32px;
+  }
+}
+
+.modal__close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 10001;
+
+  & svg {
+    width: 35px;
+    height: 35px;
+  }
+
+}
+
+#close-modal path {
+  transition: stroke 0.2s ease-in-out;
+}
+
+#close-modal:hover path,
+#close-modal:active path {
+  stroke: var(--blue-lighter);
+}

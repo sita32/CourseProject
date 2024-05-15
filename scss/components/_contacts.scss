@@ -1,0 +1,97 @@
+.contacts__container {
+  @include flex;
+}
+
+.contacts__title {
+  margin-bottom: 137px;
+}
+
+.contacts__form {
+  @include flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 917px;
+  margin-right: 81px;
+}
+
+.contacts__input {
+  width: 100%;
+  height: 60px;
+  margin-bottom: 20px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 25px;
+  font-size: 20px;
+  line-height: 31px;
+  font-weight: 400;
+  color: var(--grey);
+  transition: border-color .2s;
+
+  &:hover {
+    border-color: var(--blue-light);
+  }
+
+  &[name="firstName"] {
+    margin-right: 39px;
+  }
+
+  &[name="firstName"],
+  &[name="lastName"] {
+    max-width: 400px;
+    max-width: calc((100% - 39px) / 2);
+  }
+
+  &[name="message"] {
+    max-height: 295px;
+    min-height: 295px;
+  }
+}
+
+.contacts__submit {
+  @include flex-center-center;
+  width: 100%;
+  max-width: 300px;
+  min-height: 60px;
+  font-size: 20px;
+  line-height: 31px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: var(--blue-light);
+  transition: background-color .2s;
+
+  &:hover {
+    background-color: #060966;
+  }
+}
+
+.map {
+  width: 100%;
+  max-width: 763px;
+}
+
+
+.message-container {
+  position: relative;
+  z-index: 1000;
+  left: 20px;
+}
+
+.error-message,
+.success-message {
+  background-color: rgba(255, 0, 0, 0.8); /* Красный цвет для ошибок */
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.success-message {
+  background-color: rgba(0, 128, 0, 0.8); /* Зеленый цвет для успешной отправки */
+}
+
+.error-message.show,
+.success-message.show {
+  opacity: 1; /* Показываем блок при добавлении класса "show" */
+}

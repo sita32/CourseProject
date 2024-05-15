@@ -1,0 +1,104 @@
+.blogs {
+  padding-top: 50px;
+  padding-bottom: 70px;
+  background-color: #fff;
+}
+
+.blogs__list {
+  @include flex;
+  flex-wrap: wrap;
+  column-gap: 136px;
+  row-gap: 47px;
+}
+
+.blogs__item {
+  max-width: calc((100% - 136px * 2) / 3);
+}
+
+.blogs__link {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.3s, transform .3s;
+  z-index: 1;
+  cursor: pointer;
+
+  &::after {
+    content: 'Узнать больше';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    padding-block: 10px;
+    text-align: center;
+    font-size: 25px;
+    line-height: 35px;
+    font-weight: 600;
+    color: #fff;
+    background-color: rgb(217, 217, 217, 0.2);
+  }
+}
+
+.blogs__box {
+  width: 100%;
+  padding: 19px;
+  background-color: #fff;
+
+  & .img-wrap {
+    position: relative;
+    max-width: 483px;
+    max-height: 686px;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 12px;
+    overflow: hidden;
+
+    & img {
+      transition: filter 0.3s;
+    }
+
+    &:hover img,
+    &.active img {
+      filter: brightness(0.5);
+    }
+
+    &:hover .blogs__link,
+    &.active .blogs__link {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+}
+
+.blogs__sub-title {
+  display: block;
+  margin-bottom: 15px;
+
+  & h3 {
+    font-size: 25px;
+    line-height: 30px;
+    font-weight: 600;
+    color: var(--text-black);
+  }
+
+  & .blogs__meta {
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 600;
+    color: var(--grey);
+
+    & span {
+      color: var(--blue-light);
+    }
+  }
+}
+
+.blogs__descr {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #180930;
+}

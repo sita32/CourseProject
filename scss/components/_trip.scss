@@ -1,0 +1,223 @@
+.tour {
+  padding-top: 223px;
+  margin-bottom: 82px;
+}
+
+// content
+.tour__content {
+  @include flex;
+  padding-inline: var(--container-offset);
+  box-sizing: border-box;
+
+  & .img-wrap img {
+    width: 100%;
+  }
+}
+
+.tour__left {
+  @include flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 50%;
+  margin-right: 77px;
+
+  & .img-wrap {
+    position: relative;
+    width: 100%;
+    // min-height: 371px;
+    // max-height: 372px;
+    max-width: calc((100% - 20px) / 2);
+    cursor: pointer;
+
+    & .tour__img {
+      transition: filter .2s;
+    }
+
+    & .tour__zoom {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 45px;
+      height: 45px;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity .2s;
+    }
+
+    &:hover .tour__zoom {
+      opacity: 1;
+    }
+
+    &:hover .tour__img {
+      filter: brightness(0.5);
+    }
+  }
+}
+
+.tour__right {
+  width: calc(50% - 77px);
+  padding-block: 12px;
+}
+
+.tour__title-wrap {
+  position: relative;
+  @include flex-center-sb;
+  padding-bottom: 34px;
+  margin-bottom: 28px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    width: 154px;
+    background-color: var(--blue-light);
+  }
+}
+
+.tour__title {
+  font-size: clamp(20px, 4vw, 40px);
+  line-height: clamp(35px, 4vw, 75px);
+  font-weight: 700;
+  color: var(--text-black);
+}
+
+.tour__cost {
+  @include flex-center-center;
+  width: 100px;
+  height: 80px;
+  margin-left: 20px;
+  font-size: 25px;
+  line-height: 35px;
+  font-weight: 700;
+  color: #fff;
+  background-color: var(--blue-light);
+  clip-path: polygon(50% 0%, 100% 0, 100% 60%, 100% 100%, 36% 100%, 0 62%, 0 0);
+}
+
+.tour__descr {
+  position: relative;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+  color: var(--text-grey);
+  padding-bottom: 27px;
+  margin-bottom: 34px;
+  @include line-bottom;
+
+  &>p {
+    margin-bottom: 20px;
+  }
+}
+
+.tour__info {
+  margin-bottom: 21px;
+}
+
+.tour-info {
+  position: relative;
+  padding-bottom: 34px;
+  @include line-bottom;
+}
+
+.tour-info__row:nth-child(n-1) {
+  margin-bottom: 17px;
+}
+
+.tour-info__key,
+.tour-info__value {
+  font-size: 23px;
+  line-height: 1px;
+  font-weight: 400;
+}
+
+.tour-info__key {
+  color: var(--text-black);
+}
+
+.tour-info__value {
+  color: var(--text-grey);
+}
+
+.tour__share {
+  @include items-center;
+}
+
+.tour__share h4 {
+  font-size: 25px;
+  line-height: 38px;
+  font-weight: 600;
+  color: var(--text-black);
+  text-transform: uppercase;
+  margin-right: 13px;
+}
+
+// pagination
+.tour__pagination {
+  margin-top: 53px;
+  margin-bottom: 82px;
+}
+
+// hotels
+.hotels {
+  margin-top: 30px;
+}
+
+.hotels__title {
+  margin-bottom: 20px;
+  font-size: 25px;
+  line-height: 30px;
+  color: var(--text-black);
+}
+
+.hotels__list {
+  @include flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.hotels__item {
+  width: 100%;
+  max-width: calc((100% - 20px * 2) / 3);
+}
+
+.hotels__inner {
+  &>.img-wrap {
+    height: 120px;
+  }
+}
+
+.hotels__sub-title {
+  @include items-center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 20px;
+
+  &>span {
+    margin-right: 10px;
+    color: var(--text-black);
+  }
+}
+
+.hotels__stars {
+  @include items-center;
+
+  & .img-wrap {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 4px;
+    margin-right: 5px;
+  }
+}
+
+.hotels__num {
+  color: #FFB800;
+}
+
+.hotels__text {
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--text-grey);
+}
